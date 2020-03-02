@@ -13,7 +13,7 @@ class Conversor:
       (
         ffmpeg
         .input('./videos/'+i)
-        .output('./converted-videos/'+str(index)+format)
+        .output('./converted-videos/'+str(index)+format, ar=48000, **{'qscale:v': 0})
         .run()
       )
       index += 1
