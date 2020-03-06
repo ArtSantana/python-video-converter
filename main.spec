@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['/home/art/work/conversor-no-env'],
+             pathex=['/home/art/projects/conversor-python'],
              binaries=[],
              datas=[],
              hiddenimports=[],
