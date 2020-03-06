@@ -26,6 +26,7 @@ def menu():
       indexVideos += 1
     print('\nFor close the program digit \'exit\'\n')
     print('Enter 0 to edit your videos')
+    print('Enter \'all\' to add all videos at once')
     print('Enter the index of each video that you want work with: ', end='')
     handleInput(input())
     
@@ -37,6 +38,9 @@ def handleInput(keyInput):
     exit()
   elif keyInput == '0':
     optionsFfmpeg()
+  elif keyInput == 'all':
+    convertAll()
+    del VIDEOS_LIST[:]
   else:
     try:
       # Here we will append the video in the array and
@@ -61,3 +65,8 @@ def optionsFfmpeg():
     format = int(input())
     Videos = Video(arrayVideos)
     Converter.convertVideos(Videos.getFiles(), FORMATS[format-1])
+
+def convertAll():
+  for i in VIDEOS_LIST:
+    print(i)
+    arrayVideos.append(i)
